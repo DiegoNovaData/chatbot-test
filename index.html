@@ -1,0 +1,996 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALMA | Arte, bienestar y desarrollo humano</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --cream: #f7f4ed;
+  --dark: #24231f;
+  --terracotta: #c86c4b;
+  --sage: #a6ae97;
+  --muted: #77746d;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.container {
+  width: 90%;
+  max-width: 1240px;
+  margin: auto;
+}
+
+/* NAVBAR */
+
+header {
+  padding: 22px 0;
+  background: var(--cream);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.logo span {
+  color: var(--terracotta);
+}
+
+.menu {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+.menu a {
+  font-size: 13px;
+  color: #555;
+}
+
+.menu a:hover {
+  color: var(--terracotta);
+}
+
+.nav-cta {
+  background: var(--dark);
+  color: white;
+  padding: 12px 20px;
+  border-radius: 30px;
+  font-size: 13px;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 620px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(28,25,22,.82), rgba(28,25,22,.12)),
+    url('https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=1800&q=85')
+    center/cover;
+  color: white;
+  border-radius: 0 0 35px 35px;
+}
+
+.hero-content {
+  max-width: 680px;
+  padding: 90px 0;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  color: #e4b19c;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(44px, 6vw, 76px);
+  line-height: 1.06;
+  margin-bottom: 25px;
+}
+
+.hero p {
+  color: #e7e3dc;
+  font-size: 17px;
+  line-height: 1.8;
+  max-width: 540px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 15px 25px;
+  border-radius: 30px;
+  background: var(--terracotta);
+  color: white;
+  margin-top: 30px;
+  font-size: 14px;
+  transition: .2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background: #a95235;
+}
+
+.btn-dark {
+  background: var(--dark);
+}
+
+/* INTRO */
+
+.intro {
+  padding: 110px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 70px;
+}
+
+.intro-image img {
+  height: 500px;
+  border-radius: 220px 220px 20px 20px;
+}
+
+.intro-text h2,
+.section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 46px;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.intro-text p {
+  line-height: 1.9;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: var(--terracotta);
+}
+
+/* PROGRAMS */
+
+.programs {
+  padding: 100px 0;
+  background: #ece7dd;
+}
+
+.section-heading {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 50px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.program-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.program-card {
+  background: var(--cream);
+  border-radius: 18px;
+  overflow: hidden;
+  transition: .25s;
+}
+
+.program-card:hover {
+  transform: translateY(-5px);
+}
+
+.program-card img {
+  height: 250px;
+}
+
+.program-content {
+  padding: 25px;
+}
+
+.program-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 23px;
+  margin-bottom: 12px;
+}
+
+.program-content p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
+.program-content a {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--terracotta);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+/* WELLNESS */
+
+.wellness {
+  padding: 100px 0;
+}
+
+.wellness-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.wellness-image img {
+  height: 520px;
+  border-radius: 18px;
+}
+
+.wellness-list {
+  margin-top: 30px;
+}
+
+.wellness-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd6ca;
+}
+
+.wellness-item h3 {
+  margin-bottom: 8px;
+  font-family: 'Playfair Display', serif;
+  font-size: 21px;
+}
+
+.wellness-item p {
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+/* SOCIAL */
+
+.social {
+  background: #30372f;
+  color: white;
+  padding: 100px 0;
+}
+
+.social-grid {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.social h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 46px;
+  line-height: 1.2;
+  margin-bottom: 25px;
+}
+
+.social p {
+  color: #d1d5cc;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+
+.social img {
+  height: 450px;
+  border-radius: 18px;
+}
+
+.donation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 45px;
+}
+
+.donation-card {
+  background: #414940;
+  padding: 25px;
+  border-radius: 14px;
+}
+
+.donation-card h3 {
+  margin-bottom: 12px;
+  font-family: 'Playfair Display', serif;
+}
+
+.donation-card p {
+  font-size: 13px;
+}
+
+/* TEAM */
+
+.team {
+  padding: 100px 0;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 850px;
+  margin: auto;
+}
+
+.team-card img {
+  height: 420px;
+  border-radius: 15px;
+}
+
+.team-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  margin-top: 20px;
+}
+
+.team-card p {
+  color: var(--muted);
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+/* TESTIMONIALS */
+
+.testimonials {
+  background: #e8dfd3;
+  padding: 90px 0;
+}
+
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.quote {
+  background: var(--cream);
+  border-radius: 15px;
+  padding: 30px;
+}
+
+.quote p {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  line-height: 1.7;
+}
+
+.quote small {
+  display: block;
+  margin-top: 22px;
+  color: var(--terracotta);
+}
+
+/* CTA */
+
+.cta {
+  padding: 110px 20px;
+  text-align: center;
+  background:
+    linear-gradient(rgba(30,27,24,.65), rgba(30,27,24,.65)),
+    url('https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=1600&q=80')
+    center/cover;
+  color: white;
+}
+
+.cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 52px;
+  margin-bottom: 20px;
+}
+
+.cta p {
+  color: #eee;
+  line-height: 1.8;
+  max-width: 700px;
+  margin: auto;
+}
+
+/* FOOTER */
+
+footer {
+  background: #24231f;
+  color: white;
+  padding: 60px 0 25px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 40px;
+}
+
+footer h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+footer p,
+footer a {
+  color: #c1c0bb;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.footer-bottom {
+  border-top: 1px solid #45433e;
+  margin-top: 40px;
+  padding-top: 25px;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+  .menu {
+    display: none;
+  }
+
+  .intro,
+  .wellness-grid,
+  .social-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .social img {
+    height: 350px;
+  }
+}
+
+@media(max-width: 600px) {
+  .hero {
+    min-height: 540px;
+    border-radius: 0 0 20px 20px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+  }
+
+  .intro,
+  .programs,
+  .wellness,
+  .social,
+  .team,
+  .testimonials {
+    padding: 65px 0;
+  }
+
+  .intro-text h2,
+  .section-title,
+  .social h2 {
+    font-size: 36px;
+  }
+
+  .intro-image img {
+    height: 350px;
+  }
+
+  .program-grid,
+  .team-grid,
+  .donation-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .program-card img {
+    height: 230px;
+  }
+
+  .wellness-image img {
+    height: 350px;
+  }
+
+  .team-card img {
+    height: 350px;
+  }
+
+  .cta h2 {
+    font-size: 38px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">ALMA<span>.</span></a>
+
+    <nav class="menu">
+      <a href="#programas">Programas</a>
+      <a href="#bienestar">Bienestar</a>
+      <a href="#impacto">Impacto social</a>
+      <a href="#equipo">Equipo</a>
+    </nav>
+
+    <a href="#contacto" class="nav-cta">Contáctanos</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container hero-content">
+    <div class="eyebrow">Arte · Creatividad · Desarrollo humano</div>
+
+    <h1>El lugar donde tu esencia encuentra su expresión</h1>
+
+    <p>
+      Un espacio para descubrir talentos, fortalecer la confianza
+      y conectar con lo que verdaderamente eres a través del arte.
+    </p>
+
+    <a href="#programas" class="btn">Descubre tu camino</a>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="container intro">
+  <div class="intro-image">
+    <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=900&q=80"
+         alt="Experiencia artística y creativa">
+  </div>
+
+  <div class="intro-text">
+    <div class="eyebrow">Nuestra esencia</div>
+
+    <h2>El arte como camino hacia el <span class="highlight">Ser</span></h2>
+
+    <p>
+      Somos un espacio de formación artística y desarrollo humano.
+      Creemos que el arte es una herramienta poderosa para
+      conocernos, expresarnos y descubrir nuestro potencial.
+    </p>
+
+    <p>
+      Acompañamos a niños, jóvenes, adultos y organizaciones
+      en procesos donde la creatividad, la sensibilidad y
+      el autoconocimiento se convierten en protagonistas.
+    </p>
+
+    <a href="#programas" class="btn btn-dark">Conoce nuestra propuesta</a>
+  </div>
+</section>
+
+<!-- PROGRAMAS -->
+<section class="programs" id="programas">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Encuentra tu espacio</div>
+      <h2 class="section-title">Experiencias para cada etapa de la vida</h2>
+      <p>
+        Explora nuestros procesos de formación. Cada programa
+        está diseñado para estimular la creatividad, la expresión
+        y el crecimiento personal.
+      </p>
+    </div>
+
+    <div class="program-grid">
+
+      <article class="program-card">
+        <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=800&q=80"
+             alt="Niños explorando su creatividad">
+        <div class="program-content">
+          <h3>Pre TEMU</h3>
+          <p>Descubrimiento artístico y desarrollo psicoafectivo para los más pequeños.</p>
+          <a href="#contacto">Conocer programa →</a>
+        </div>
+      </article>
+
+      <article class="program-card">
+        <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=800&q=80"
+             alt="Teatro y expresión escénica">
+        <div class="program-content">
+          <h3>Teatro Musical Infantil</h3>
+          <p>Un lugar para jugar, imaginar, expresarse y crecer a través del teatro.</p>
+          <a href="#contacto">Conocer programa →</a>
+        </div>
+      </article>
+
+      <article class="program-card">
+        <img src="https://images.unsplash.com/photo-1516280440614-37939bb980d8?auto=format&fit=crop&w=800&q=80"
+             alt="Jóvenes en una experiencia artística">
+        <div class="program-content">
+          <h3>Teatro Musical Juvenil</h3>
+          <p>Expresión, confianza y desarrollo de identidad propia para jóvenes.</p>
+          <a href="#contacto">Conocer programa →</a>
+        </div>
+      </article>
+
+      <article class="program-card">
+        <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=800&q=80"
+             alt="Adultos participando en una actividad artística">
+        <div class="program-content">
+          <h3>Teatro Musical Adultos</h3>
+          <p>Un espacio para reencontrarte contigo a través del escenario y la expresión.</p>
+          <a href="#contacto">Conocer programa →</a>
+        </div>
+      </article>
+
+      <article class="program-card">
+        <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=800&q=80"
+             alt="Equipo de trabajo en actividad colaborativa">
+        <div class="program-content">
+          <h3>Programa Corporativo</h3>
+          <p>Desarrollo organizacional, comunicación y conexión para equipos.</p>
+          <a href="#contacto">Conocer programa →</a>
+        </div>
+      </article>
+
+      <article class="program-card">
+        <img src="https://images.unsplash.com/photo-1503095396549-807759245b35?auto=format&fit=crop&w=800&q=80"
+             alt="Producción artística y escenario">
+        <div class="program-content">
+          <h3>Producciones</h3>
+          <p>Diseño y ejecución integral de procesos y experiencias escénicas.</p>
+          <a href="#contacto">Conocer programa →</a>
+        </div>
+      </article>
+
+      <article class="program-card">
+        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=80"
+             alt="Práctica de danza">
+        <div class="program-content">
+          <h3>Danza</h3>
+          <p>Técnica y expresión corporal a través de diversos géneros dancísticos.</p>
+          <a href="#contacto">Conocer programa →</a>
+        </div>
+      </article>
+
+      <article class="program-card">
+        <img src="https://images.unsplash.com/photo-1516280440614-37939bb980d8?auto=format&fit=crop&w=800&q=80"
+             alt="Cantante ensayando">
+        <div class="program-content">
+          <h3>Canto</h3>
+          <p>Encuentra tu voz técnica y simbólicamente en un espacio de conexión.</p>
+          <a href="#contacto">Conocer programa →</a>
+        </div>
+      </article>
+
+      <article class="program-card">
+        <img src="https://images.unsplash.com/photo-1508700115892-45ecd05ae2ad?auto=format&fit=crop&w=800&q=80"
+             alt="Arte dramático">
+        <div class="program-content">
+          <h3>Actuación</h3>
+          <p>Formación técnica en el arte de la representación y expresión teatral.</p>
+          <a href="#contacto">Conocer programa →</a>
+        </div>
+      </article>
+
+      <article class="program-card">
+        <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=800&q=80"
+             alt="Instrumentos musicales">
+        <div class="program-content">
+          <h3>Instrumentos Musicales</h3>
+          <p>Formación personalizada para descubrir el lenguaje de la música.</p>
+          <a href="#contacto">Conocer programa →</a>
+        </div>
+      </article>
+
+      <article class="program-card">
+        <img src="https://images.unsplash.com/photo-1475721027785-f74eccf877e2?auto=format&fit=crop&w=800&q=80"
+             alt="Actividades recreativas">
+        <div class="program-content">
+          <h3>Bootcamp Vacacional</h3>
+          <p>Una experiencia creativa, divertida y artística para disfrutar las vacaciones.</p>
+          <a href="#contacto">Conocer programa →</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- BIENESTAR -->
+<section class="wellness" id="bienestar">
+  <div class="container wellness-grid">
+
+    <div class="wellness-text">
+      <div class="eyebrow">Cuerpo · Mente · Espíritu</div>
+
+      <h2 class="section-title">El bienestar también es parte del camino</h2>
+
+      <p>
+        Crear, expresarnos y crecer también requiere cuidar de nosotros.
+        Complementamos la experiencia artística con espacios
+        de bienestar, movimiento y conexión interior.
+      </p>
+
+      <div class="wellness-list">
+
+        <div class="wellness-item">
+          <h3>Yoga</h3>
+          <p>Conecta cuerpo, mente y espíritu mediante la respiración y el movimiento consciente.</p>
+        </div>
+
+        <div class="wellness-item">
+          <h3>Pilates</h3>
+          <p>Fortalece tu centro, mejora la postura y desarrolla una musculatura equilibrada.</p>
+        </div>
+
+        <div class="wellness-item">
+          <h3>Talleres</h3>
+          <p>Experiencias intensivas de bienestar, crecimiento y exploración personal.</p>
+        </div>
+
+        <div class="wellness-item">
+          <h3>Terapia Holística</h3>
+          <p>Espacios de conexión, autoconocimiento y desarrollo transpersonal.</p>
+        </div>
+
+        <div class="wellness-item">
+          <h3>Espacios Culturales</h3>
+          <p>Encuentros diseñados para compartir, explorar y aprender en comunidad.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="wellness-image">
+      <img src="https://images.unsplash.com/photo-1545389336-cf090694435e?auto=format&fit=crop&w=900&q=80"
+           alt="Bienestar y movimiento consciente">
+    </div>
+
+  </div>
+</section>
+
+<!-- IMPACTO SOCIAL -->
+<section class="social" id="impacto">
+  <div class="container">
+
+    <div class="social-grid">
+      <div>
+        <div class="eyebrow">Arte para todos</div>
+
+        <h2>Creemos en el talento sin barreras</h2>
+
+        <p>
+          El arte es una herramienta de inclusión, diversidad
+          y transformación social. Trabajamos para abrir espacios
+          seguros y accesibles a personas con diferentes realidades,
+          acompañando sus procesos de aprendizaje y autoconocimiento.
+        </p>
+
+        <p>
+          Queremos que más personas tengan la oportunidad de descubrir
+          su talento, expresarse libremente y encontrar comunidad.
+        </p>
+      </div>
+
+      <img src="https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=900&q=80"
+           alt="Comunidad participando en actividad artística">
+    </div>
+
+    <div class="donation-grid">
+
+      <div class="donation-card">
+        <h3>Dona</h3>
+        <p>Contribuye a crear oportunidades de formación artística para personas que lo necesitan.</p>
+      </div>
+
+      <div class="donation-card">
+        <h3>Apadrina un cupo</h3>
+        <p>Apoya el proceso de formación de un estudiante durante un ciclo académico.</p>
+      </div>
+
+      <div class="donation-card">
+        <h3>Alíate con nosotros</h3>
+        <p>Construye alianzas de impacto social junto a nuestra comunidad.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- EQUIPO -->
+<section class="team" id="equipo">
+  <div class="container">
+    <div class="section-heading">
+      <div class="eyebrow">Personas que inspiran</div>
+      <h2 class="section-title">Nuestro equipo</h2>
+      <p>Profesionales apasionados por el arte, la educación y el desarrollo humano.</p>
+    </div>
+
+    <div class="team-grid">
+
+      <article class="team-card">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80"
+             alt="Directora artística">
+        <h3>Laura Méndez</h3>
+        <p>Directora General · Fundadora</p>
+      </article>
+
+      <article class="team-card">
+        <img src="https://images.unsplash.com/photo-1500648767791-00̸d5e2e9a?auto=format&fit=crop&w=800&q=80"
+             alt="Director de formación">
+        <h3>Andrés Rivera</h3>
+        <p>Co-fundador · Director de Formación</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testimonials">
+  <div class="container">
+
+    <div class="section-heading">
+      <div class="eyebrow">Experiencias reales</div>
+      <h2 class="section-title">Lo que nuestra comunidad cuenta</h2>
+    </div>
+
+    <div class="testimonial-grid">
+
+      <div class="quote">
+        <p>
+          “El ambiente es maravilloso. Mis hijos aman sus clases,
+          han ganado confianza y se expresan mucho más.”
+        </p>
+        <small>Madre de estudiantes</small>
+      </div>
+
+      <div class="quote">
+        <p>
+          “Encontré un espacio para descubrir mi voz y sentirme
+          parte de una comunidad que me acompaña sin juzgar.”
+        </p>
+        <small>Estudiante de actuación</small>
+      </div>
+
+      <div class="quote">
+        <p>
+          “Las experiencias que vivimos como equipo nos permitieron
+          comunicarnos mejor y construir nuevas dinámicas.”
+        </p>
+        <small>Aliado corporativo</small>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta" id="contacto">
+  <div class="container">
+    <div class="eyebrow">Tu próximo capítulo comienza aquí</div>
+
+    <h2>Hay un lugar para ti en ALMA</h2>
+
+    <p>
+      Para tus hijos, para ti, para tu equipo o para ese talento
+      que aún no has descubierto. Ven a explorar, aprender y crear.
+    </p>
+
+    <a href="https://wa.me/573001234567"
+       target="_blank"
+       class="btn">
+      Hablemos por WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>ALMA.</h3>
+        <p>
+          Arte, formación y desarrollo humano.
+          Un espacio para crecer, expresarse y conectar
+          con nuestra esencia.
+        </p>
+      </div>
+
+      <div>
+        <h3>Contacto</h3>
+        <p>WhatsApp: +57 300 123 4567</p>
+        <p>Email: hola@almaestudio.co</p>
+        <p>Bogotá, Colombia</p>
+      </div>
+
+      <div>
+        <h3>Explora</h3>
+        <p><a href="#programas">Programas artísticos</a></p>
+        <p><a href="#bienestar">Bienestar</a></p>
+        <p><a href="#impacto">Impacto social</a></p>
+        <p><a href="#equipo">Nuestro equipo</a></p>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 ALMA Estudio · Mock de sitio web para pruebas de chatbot
+    </div>
+
+  </div>
+</footer>
+
+<!-- TAWK.TO CHAT WIDGET -->
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6b04cd9174e41f3cb9e540ff/1k85c60pk';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+</body>
+</html>
